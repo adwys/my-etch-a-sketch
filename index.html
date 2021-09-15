@@ -5,17 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
-    <!-- <link type="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>ETCH-A-SKETCH</title>
 </head>
 <body>
-
-    <div class = "container">
+    <div class = "header">
         <h1>ETCH-A-SKETCH</h1>
-        <p>grid density</p>
-        <input type="range" value="24" min="1" max="100" onchange="populate_the_grid(this.nextElementSibling.value)" oninput="this.nextElementSibling.value = this.value">
-        <output>24</output>
+    </div>
+    <div class = "container">
+        
+        <div class="settings">
+            <p>grid density</p>
+            <input type="range" value="16" min="1" max="100" onchange="populate_the_grid(this.nextElementSibling.value)" oninput="this.nextElementSibling.value = this.value">
+            <output id="output">16</output>
+            <input type="color" id ="color">
+            <button onclick="single_color()"id="simple" class ="button">single color</button>
+            <button onclick="rainbow_color()" id="rainbow" class ="button">rainbow mode</button>
+            <button onclick="clear_board(); populate_the_grid(document.getElementById('output').textContent)" id="clear" class ="button">clear</button>
+            
+            
+        </div>
+        
         <div class ="parent">
             
         </div>
